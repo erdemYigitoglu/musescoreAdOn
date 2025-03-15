@@ -3,6 +3,8 @@ import note
 from scriptHandler import script
 import ui
 import api
+from controlTypes import controlTypes
+from NVDAObjects.UIA import UIA
 class AppModule(appModuleHandler.AppModule):
 	@script(
 		gesture= "kb:NVDA+shift+p",
@@ -20,3 +22,6 @@ class AppModule(appModuleHandler.AppModule):
 		object = api.getFocusObject()
 		noteInfo = note.Note(object.name)
 		ui.message(noteInfo.place)
+	def event_NVDAObject_init(self, obj):
+		if isinstance(obj, UIA) and obj.role == controlTypes.Role.STATICTEXT:
+			obj.name = note.Note(obj.name).transformNoteInfo()
