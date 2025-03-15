@@ -15,7 +15,7 @@ class Note():
         elif self._name[0] == "D":
             return "re " + self._name[6:]  + " , "  +self._place
         elif self._name[0] == "E":
-            return "me " + self._name[6:] + " , "  +self._place
+            return "m  e " + self._name[6:] + " , "  +self._place
         elif self._name[0] == "F":
             return "fa " + self._name[6:] + " , "  +self._place
         elif self._name[0] == "G":

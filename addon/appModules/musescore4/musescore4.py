@@ -10,5 +10,5 @@ class AppModule(appModuleHandler.AppModule):
     )
     def script_anouncePich(self, gesture):
         object = api.getFocusObject()
-        note= Note(object.name)
+        note= note.Note(object.name)
         ui.message(note.name)
