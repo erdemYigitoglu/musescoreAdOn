@@ -12,3 +12,8 @@ class AppModule(appModuleHandler.AppModule):
         object = api.getFocusObject()
         note= note.Note(object.name)
         ui.message(note.name)
+	@script(gesture= "kb:NVDA+shift+i", description ="anounces measurement and beat information of the pich.")
+	def script_anounceRythim(self, gesture):
+		object = api.getFocusObject()
+		noteInfo = note.Note(object.name)
+		ui.message(noteInfo.place)
