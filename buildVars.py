@@ -58,7 +58,7 @@ addon_info = {
 # https://scons.org/doc/production/HTML/scons-user/apd.html
 import os
 pythonSources = [
-    os.path.join("addon", "appModules", "musescore4", "*.py"),
+    os.path.join("addon", "appModules", "*.py"),
     os.path.join("addon", "appModules", "musescore4", "note", "*.py")
 ]
 # Files that contain strings for translation. Usually your python sources
