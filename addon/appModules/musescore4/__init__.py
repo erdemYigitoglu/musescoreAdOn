@@ -3,7 +3,7 @@ from .note import Note
 from scriptHandler import script
 import ui
 import api
-from controlTypes import controlTypes
+import controlTypes
 from NVDAObjects.UIA import UIA
 class AppModule(appModuleHandler.AppModule):
 	@script(
@@ -24,4 +24,4 @@ class AppModule(appModuleHandler.AppModule):
 		ui.message(noteInfo.place)
 	def event_NVDAObject_init(self, obj):
 		if isinstance(obj, UIA) and obj.role == controlTypes.Role.STATICTEXT:
-			obj.name = Note(obj.name).changeToDo()
+			obj.name = Note(obj.name).changeToDo() + " , " + Note(obj.name).place

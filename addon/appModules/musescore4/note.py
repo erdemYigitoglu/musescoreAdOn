@@ -11,4 +11,4 @@ class Note():
 		return self._place
 	def changeToDo(self):
 		noteMap = {"C": "Do", "D":"Re", "E":"Me", "F":"Fa", "G":"Sol", "A":"La", "B":"Si"}
-		return noteMap.get(self._name[0]) + " " + self._name[1:]
+		return noteMap.get(self._name[0]) + self._name[2:]
