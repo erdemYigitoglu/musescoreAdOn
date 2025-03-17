@@ -24,4 +24,4 @@ class AppModule(appModuleHandler.AppModule):
 		ui.message(noteInfo.place)
 	def event_NVDAObject_init(self, obj):
 		if isinstance(obj, UIA) and obj.role == controlTypes.Role.STATICTEXT:
-			obj.name = Note(obj.name).transformNote()
+			obj.name = Note(obj.name).changeToDo()
